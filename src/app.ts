@@ -10,6 +10,7 @@ import dotenv from 'dotenv';
 import drinksRoutes from './routes/drinks';
 import intakeRoutes from './routes/intake';
 import subscriptionRoutes from './routes/subscription';
+import userRoutes from './routes/user';
 
 dotenv.config();
 
@@ -35,6 +36,7 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 app.use('/api/drinks', drinksRoutes);
 app.use('/api/intake', intakeRoutes);
 app.use('/api/subscription', subscriptionRoutes);
+app.use('/api/user', userRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
